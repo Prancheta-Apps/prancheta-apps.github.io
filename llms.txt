@@ -1,0 +1,17 @@
+# Prancheta Apps
+
+> Apps e jogos de esporte feitos no Brasil por um desenvolvedor independente. Todos gratuitos, com versão Pro opcional sem anúncios. Site em português, inglês e espanhol.
+
+## Apps
+
+- [Peteleco Cards](https://petelecocards.com.br/): jogo de futebol de botão online com cartas de poder. Roda no navegador, contra o computador, com amigos no mesmo aparelho ou online. Também no Android.
+- [Quadro Tático: Prancheta Fácil](https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodeesportes): prancheta tática para treinadores. Futebol, futsal, fut7, basquete, vôlei, handebol, beach tennis e outros, com campos nas medidas oficiais e formações prontas. Monta a jogada em passos, anima e envia ao time. Android.
+- [Tabela de Futebol: Torneios](https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol): gerador de tabela de campeonato. Pontos corridos, mata-mata e grupos + mata-mata, com qualquer número de times, ida e volta e pênaltis. Lança os placares, atualiza a classificação e gera PDF para mandar no grupo. Android.
+- [Finança Fácil](https://play.google.com/store/apps/details?id=com.prancheta.financafacil): controle financeiro pessoal sem cadastro. Receitas, despesas, saldo por categoria e mês e exportação em CSV; os dados ficam só no aparelho. Android.
+
+## Mais
+
+- [Todos os apps no Google Play](https://play.google.com/store/apps/dev?id=7964185345858453468)
+- [Termos de uso e privacidade](https://prancheta.cloud/termos/)
+- [English](https://prancheta.cloud/en/) · [Español](https://prancheta.cloud/es/)
+- Contato: contato@prancheta.cloud

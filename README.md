@@ -8,6 +8,12 @@ Site estático da Prancheta Apps (HTML e CSS puros, sem build). Abra `index.html
 - `assets/`: logo, ícones dos apps e a fonte Oswald (OFL), servida daqui.
 - `app-ads.txt`: exigido pelo AdMob. Precisa ficar na raiz do domínio cadastrado como site do desenvolvedor na Play Store (`https://prancheta.cloud/app-ads.txt`).
 
-App novo ou retirado da loja: atualize o cartão nas três páginas e o ícone em `assets/`.
+- `robots.txt`: libera todos os robôs, inclusive os das IAs (GPTBot, ClaudeBot, PerplexityBot etc.), e aponta o sitemap.
+- `sitemap.xml`: todas as páginas, com os três idiomas ligados por `hreflang`. Página nova entra aqui.
+- `llms.txt`: resumo do site e dos apps para as IAs. Mudou um app, mude aqui.
+
+Cada `index.html` tem um bloco JSON-LD (`application/ld+json`) com a organização e os apps.
+
+App novo ou retirado da loja: atualize o cartão e o JSON-LD nas três páginas, o `llms.txt` e o ícone em `assets/`.
 
 Publicado em https://prancheta.cloud pelo GitHub Pages. O deploy é manual: workflow "Deploy" na aba Actions. O domínio está cadastrado em Settings → Pages; o DNS fica na Hostinger (quatro registros A do GitHub Pages e `www` como CNAME de `prancheta-apps.github.io`).

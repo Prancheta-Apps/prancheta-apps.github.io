@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://prancheta.cloud/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url>
+    <loc>https://prancheta.cloud/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url>
+    <loc>https://prancheta.cloud/es/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url><loc>https://prancheta.cloud/termos/</loc></url>
+  <url><loc>https://prancheta.cloud/termos/quadro-tatico/</loc></url>
+  <url><loc>https://prancheta.cloud/termos/tabela-de-futebol/</loc></url>
+  <url><loc>https://prancheta.cloud/termos/financa-facil/</loc></url>
+</urlset>
