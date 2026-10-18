@@ -103,7 +103,7 @@ h1 span { color: var(--yellow); }
 
 .app p { flex: 1; margin: 0 0 8px; color: var(--muted); }
 
-.app .button { align-self: stretch; padding: 12px 10px; font-size: 0.92rem; text-align: center; white-space: nowrap; }
+.app .button { align-self: stretch; padding: 12px 8px; font-size: 0.9rem; line-height: 1.25; text-align: center; }
 
 .more { margin: 28px 0 0; }
 
