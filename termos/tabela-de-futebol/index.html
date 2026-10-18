@@ -13,7 +13,16 @@
   <body>
     <header class="doc-header">
       <a class="doc-brand" href="../../">Prancheta <span>Apps</span></a>
-      <nav class="languages" aria-label="Idioma / Language"><a href="#pt">Português</a> <a href="#en">English</a> <a href="#es">Español</a></nav>
+      <label class="lang-picker" aria-label="Idioma / Language">
+        <select id="lang-select" onchange="if (this.value) location.hash = this.value">
+          <option value="pt" selected>🇧🇷 Português</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="de">🇩🇪 Deutsch</option>
+        </select>
+      </label>
     </header>
     <main class="doc">
       <div class="doc-title">
@@ -176,11 +185,77 @@
         <h3>4. Derechos del Usuario y Eliminación de Datos</h3>
         <p>Para borrar datos locales, basta con desinstalar la app o borrar el almacenamiento desde los ajustes de Android. Para consultas sobre la compra Pro, responda en un plazo de 15 días a través de <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
       </section>
+      <section id="fr" lang="fr">
+        <p class="doc-jump"><a href="#termos-fr">Conditions d'Utilisation</a> · <a href="#privacidade-fr">Politique de Confidentialité</a></p>
+        <h2 id="termos-fr">Conditions d'Utilisation</h2>
+        <p class="date"><strong>Date d'entrée en vigueur :</strong> 10 octobre 2026</p>
+        <h4>Résumé</h4>
+        <ul><li>Règles légales d'utilisation de Tableau de Football (paquet com.prancheta.tabeladefutebol).</li><li>Application sans création de compte, sans connexion ni stockage de données personnelles.</li><li>Version gratuite avec publicités et version Pro par achat unique sur Google Play.</li><li>Tous les tournois, scores et classements sont conservés uniquement sur votre appareil.</li></ul>
+        <h3>1. Licence d'Utilisation</h3>
+        <p>Le développeur Sávio Santos de Araújo vous accorde une licence personnelle et révocable pour utiliser l'application sur votre appareil Android.</p>
+        <h3>2. Fonctionnalités et Version Pro</h3>
+        <p>Gestion de tournois de football (championnat, élimination directe et phases de groupes) avec export PDF. La version Pro supprime les publicités et débloque la création illimitée de tournois et d'exports PDF.</p>
+        <h3>3. Achats et Remboursements</h3>
+        <p>Les paiements sont gérés exclusivement par Google Play. Demandes de remboursement via Google Play ou par email à <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+        <h2 id="privacidade-fr">Politique de Confidentialité</h2>
+        <p class="date">Date d'entrée en vigueur : 10 octobre 2026</p>
+        <ul><li><strong>Stockage local :</strong> Vos données de tournois restent uniquement dans la mémoire de votre appareil.</li><li><strong>Publicités (Google AdMob) :</strong> Identifiant publicitaire et IP traités par Google pour diffuser des annonces.</li><li><strong>Achats (RevenueCat) :</strong> Validation anonyme de l'achat Pro.</li></ul>
+        <p>Contact : <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+      </section>
+      <section id="it" lang="it">
+        <p class="doc-jump"><a href="#termos-it">Termini di Utilizzo</a> · <a href="#privacidade-it">Informativa sulla Privacy</a></p>
+        <h2 id="termos-it">Termini di Utilizzo</h2>
+        <p class="date"><strong>Data di efficacia:</strong> 10 ottobre 2026</p>
+        <h4>Riepilogo</h4>
+        <ul><li>Regole per l'uso dell'applicazione Tabellone Calcio (pacchetto com.prancheta.tabeladefutebol).</li><li>Nessuna registrazione né creazione di account richiesta.</li><li>Versione gratuita con annunci e versione Pro ad acquisto singolo su Google Play.</li><li>Tornei, squadre, risultati e classifiche sono memorizzati esclusivamente sul tuo dispositivo.</li></ul>
+        <h3>1. Licenza d'Uso</h3>
+        <p>Lo sviluppatore Sávio Santos de Araújo concede una licenza personale e non esclusiva per l'uso dell'app su dispositivi Android.</p>
+        <h3>2. Funzionalità e Versione Pro</h3>
+        <p>Gestione di campionati e tornei (girone all'italiana, eliminazione diretta e gironi) con esportazione PDF. La versione Pro rimuove gli annunci e sblocca tornei ed esportazioni illimitati.</p>
+        <h3>3. Acquisti e Rimborsi</h3>
+        <p>I pagamenti sono gestiti da Google Play. È possibile richiedere il rimborso tramite Google Play o scrivendo a <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+        <h2 id="privacidade-it">Informativa sulla Privacy</h2>
+        <p class="date">Data di efficacia: 10 ottobre 2026</p>
+        <ul><li><strong>Dati Locali:</strong> Tornei, risultati e file PDF restano unicamente sul dispositivo.</li><li><strong>Pubblicità (Google AdMob):</strong> ID pubblicitario e IP gestiti da Google per mostrare gli annunci.</li><li><strong>Acquisti (RevenueCat):</strong> Convalida anonima del prodotto Pro.</li></ul>
+        <p>Contatto: <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+      </section>
+      <section id="de" lang="de">
+        <p class="doc-jump"><a href="#termos-de">Nutzungsbedingungen</a> · <a href="#privacidade-de">Datenschutzerklärung</a></p>
+        <h2 id="termos-de">Nutzungsbedingungen</h2>
+        <p class="date"><strong>Gültig ab:</strong> 10. Oktober 2026</p>
+        <h4>Zusammenfassung</h4>
+        <ul><li>Rechtliche Bestimmungen für die App Turniertabelle Fußball (Paket com.prancheta.tabeladefutebol).</li><li>Kein Konto und kein Login erforderlich.</li><li>Kostenlose Version mit Werbung und optionale Pro-Version per Einmalkauf über Google Play.</li><li>Alle Turniere, Tabellen und PDF-Exporte werden ausschließlich lokal auf deinem Gerät gespeichert.</li></ul>
+        <h3>1. Nutzungslizenz</h3>
+        <p>Der Entwickler Sávio Santos de Araújo gewährt Ihnen eine persönliche, widerrufliche Lizenz zur Nutzung der App auf Android-Geräten.</p>
+        <h3>2. Funktionen und Pro-Version</h3>
+        <p>Verwaltung von Fußballturnieren (Liga, K.-o.-System und Gruppenphase) mit PDF-Export. Die Pro-Version entfernt Werbung und schaltet unbegrenzte Turniere und PDF-Exporte frei.</p>
+        <h3>3. Zahlungen und Erstattungen</h3>
+        <p>Abwicklung über Google Play. Erstattungsanfragen über Google Play oder per E-Mail an <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+        <h2 id="privacidade-de">Datenschutzerklärung</h2>
+        <p class="date">Gültig ab: 10. Oktober 2026</p>
+        <ul><li><strong>Lokale Daten:</strong> Turniere, Ergebnisse und PDF-Dateien verbleiben ausschließlich im Gerätespeicher.</li><li><strong>Werbung (Google AdMob):</strong> Werbe-ID und IP-Adresse werden von Google für Anzeigen verarbeitet.</li><li><strong>Käufe (RevenueCat):</strong> Anonyme Validierung des Pro-Kaufs.</li></ul>
+        <p>Kontakt: <a href="mailto:contato@prancheta.cloud">contato@prancheta.cloud</a>.</p>
+      </section>
     </main>
     <footer class="footer">
       <a href="../">Termos dos outros apps</a>
       <a href="mailto:contato@prancheta.cloud">Contato</a>
       <span>© 2026 Prancheta Apps</span>
     </footer>
+    <script>
+      (function() {
+        var sel = document.getElementById('lang-select');
+        var sync = function() {
+          var h = (location.hash || '').replace('#', '');
+          if (h && sel && Array.prototype.some.call(sel.options, function(o) { return o.value === h; })) {
+            sel.value = h;
+          } else if (sel) {
+            sel.value = 'pt';
+          }
+        };
+        window.addEventListener('hashchange', sync);
+        sync();
+      })();
+    </script>
   </body>
 </html>
