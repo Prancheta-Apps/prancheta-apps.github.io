@@ -10,6 +10,9 @@
     <link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
     <link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
     <link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
     <link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
     <meta property="og:url" content="https://prancheta.cloud/" />
     <meta property="og:image" content="https://prancheta.cloud/assets/og.jpg" />
@@ -26,7 +29,16 @@
   <body>
     <header class="doc-header">
       <h1 class="doc-brand"><img src="assets/logo.png" alt="" width="40" height="40" />Prancheta <span>Apps</span></h1>
-      <nav class="languages" aria-label="Idioma / Language"><a href="" aria-current="page" lang="pt-BR">Português</a> <a href="en/" lang="en">English</a> <a href="es/" lang="es">Español</a></nav>
+      <label class="lang-picker" aria-label="Idioma / Language">
+        <select onchange="if (this.value) location.href = this.value">
+          <option value="" selected>Português</option>
+          <option value="en/">English</option>
+          <option value="es/">Español</option>
+          <option value="fr/">Français</option>
+          <option value="it/">Italiano</option>
+          <option value="de/">Deutsch</option>
+        </select>
+      </label>
     </header>
     <main>
       <section id="apps" class="section">
@@ -47,7 +59,7 @@
             <span class="app-kind">App</span>
             <h3>Quadro Tático</h3>
             <p>Prancheta tática com jogada animada: monte os passos, dê play e envie ao time.</p>
-            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodeesportes" target="_blank" rel="noopener">Baixar no Google Play</a>
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodeesportes&amp;hl=pt-BR" target="_blank" rel="noopener">Baixar no Google Play</a>
           </div>
         </li>
         <li class="app">
@@ -56,7 +68,7 @@
             <span class="app-kind">App</span>
             <h3>Tabela de Futebol</h3>
             <p>Monte o campeonato, lance os placares e veja a classificação. PDF na hora.</p>
-            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol" target="_blank" rel="noopener">Baixar no Google Play</a>
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol&amp;hl=pt-BR" target="_blank" rel="noopener">Baixar no Google Play</a>
           </div>
         </li>
         <li class="app">
@@ -65,11 +77,11 @@
             <span class="app-kind">App</span>
             <h3>Finança Fácil</h3>
             <p>Anote receitas e despesas e veja para onde o dinheiro vai. Sem cadastro.</p>
-            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.financafacil" target="_blank" rel="noopener">Baixar no Google Play</a>
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.financafacil&amp;hl=pt-BR" target="_blank" rel="noopener">Baixar no Google Play</a>
           </div>
         </li>
         </ul>
-        <p class="more"><a href="https://play.google.com/store/apps/dev?id=7964185345858453468" target="_blank" rel="noopener">Todos os apps no Google Play →</a></p>
+        <p class="more"><a href="https://play.google.com/store/apps/dev?id=7964185345858453468&amp;hl=pt-BR" target="_blank" rel="noopener">Todos os apps no Google Play →</a></p>
       </section>
       <section class="section follow">
         <h2>Acompanhe</h2>

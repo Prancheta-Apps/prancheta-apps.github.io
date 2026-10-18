@@ -1,6 +1,6 @@
 # Prancheta Apps
 
-> Apps e jogos de esporte feitos no Brasil por um desenvolvedor independente. Todos gratuitos, com versão Pro opcional sem anúncios. Site em português, inglês e espanhol.
+> Apps e jogos de esporte feitos no Brasil por um desenvolvedor independente. Todos gratuitos, com versão Pro opcional sem anúncios. Site em português, inglês, espanhol, francês, italiano e alemão.
 
 ## Apps
 
@@ -13,5 +13,5 @@
 
 - [Todos os apps no Google Play](https://play.google.com/store/apps/dev?id=7964185345858453468)
 - [Termos de uso e privacidade](https://prancheta.cloud/termos/)
-- [English](https://prancheta.cloud/en/) · [Español](https://prancheta.cloud/es/)
+- [English](https://prancheta.cloud/en/) · [Español](https://prancheta.cloud/es/) · [Français](https://prancheta.cloud/fr/) · [Italiano](https://prancheta.cloud/it/) · [Deutsch](https://prancheta.cloud/de/)
 - Contato: contato@prancheta.cloud

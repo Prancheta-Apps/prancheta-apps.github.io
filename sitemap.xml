@@ -5,6 +5,9 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
   </url>
   <url>
@@ -12,6 +15,9 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
   </url>
   <url>
@@ -19,6 +25,39 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url>
+    <loc>https://prancheta.cloud/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url>
+    <loc>https://prancheta.cloud/it/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
+  </url>
+  <url>
+    <loc>https://prancheta.cloud/de/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://prancheta.cloud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://prancheta.cloud/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://prancheta.cloud/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://prancheta.cloud/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://prancheta.cloud/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://prancheta.cloud/de/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prancheta.cloud/" />
   </url>
   <url><loc>https://prancheta.cloud/termos/</loc></url>

@@ -23,11 +23,48 @@ body { margin: 0; font-family: var(--body); color: var(--ink); background: var(-
 
 h1, h2, h3 { font-family: var(--heading); font-weight: 600; line-height: 1.1; margin: 0; }
 
-.languages { display: flex; gap: 14px; font-size: 0.9rem; }
+.languages { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem; }
 
 .languages a { color: #ffffff; opacity: 0.75; text-decoration: none; }
 
 .languages a[aria-current='page'] { opacity: 1; font-weight: 700; border-bottom: 2px solid var(--yellow); }
+
+.lang-picker { position: relative; display: inline-flex; align-items: center; }
+
+.lang-picker select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 6px 30px 6px 14px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.lang-picker select:hover,
+.lang-picker select:focus {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: var(--yellow);
+}
+
+.lang-picker select option { background: var(--green-dark); color: #ffffff; }
+
+.lang-picker::after {
+  content: '▾';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  pointer-events: none;
+  font-size: 0.75rem;
+}
 
 h1 { font-size: clamp(2.6rem, 9vw, 5rem); letter-spacing: 0.04em; text-transform: uppercase; text-shadow: 0 4px 0 rgba(0, 50, 15, 0.45); }
 
