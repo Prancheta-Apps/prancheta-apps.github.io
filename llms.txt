@@ -7,7 +7,7 @@
 - [Peteleco Cards](https://petelecocards.com.br/): jogo de futebol de botão online com cartas de poder. Roda no navegador, contra o computador, com amigos no mesmo aparelho ou online. Também no Android: [Google Play](https://play.google.com/store/apps/details?id=com.prancheta.peteleco).
 - [Quadro Tático: Prancheta Fácil](https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodeesportes): prancheta tática para treinadores. Futebol, futsal, fut7, basquete, vôlei, handebol, beach tennis e outros, com campos nas medidas oficiais e formações prontas. Monta a jogada em passos, anima e envia ao time. Android.
 - [Tabela de Futebol: Torneios](https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol): gerador de tabela de campeonato. Pontos corridos, mata-mata e grupos + mata-mata, com qualquer número de times, ida e volta e pênaltis. Lança os placares, atualiza a classificação e gera PDF para mandar no grupo. Android.
-- [Finança Fácil](https://play.google.com/store/apps/details?id=com.prancheta.financafacil): controle financeiro pessoal sem cadastro. Receitas, despesas, saldo por categoria e mês e exportação em CSV; os dados ficam só no aparelho. Android.
+- [Caixa da Pelada: Mensalidade](https://play.google.com/store/apps/details?id=com.prancheta.financafacil): controle de mensalidades e caixa para pelada e futebol amador, sem cadastro. Cobrança semanal, quinzenal ou mensal, jogadores mensalistas ou avulsos, entradas e saídas por categoria e imagem com quem pagou e quem deve para mandar no grupo; os dados ficam só no aparelho. Android.
 
 ## Mais
 
