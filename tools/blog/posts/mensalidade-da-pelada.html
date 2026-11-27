@@ -1,0 +1,96 @@
+<!--
+{
+  "title": "Mensalidade da pelada: quanto cobrar e como organizar",
+  "h1": "Mensalidade da pelada: quanto cobrar e como organizar o caixa sem dor de cabeça",
+  "description": "Calcule o valor justo da mensalidade da pelada, escolha entre fixo e avulso e cobre sem constrangimento. Com calculadora e modelo de mensagem para o grupo.",
+  "lead": "Todo grupo de pelada tem um herói que aluga a quadra, compra a bola e cobra os amigos. Se esse é você, este guia ajuda a chegar num valor justo e a parar de pagar a conta dos outros.",
+  "tag": "Pelada",
+  "app": "caixa",
+  "date": "2026-11-27",
+  "order": 4,
+  "minutes": 5,
+  "keywords": ["mensalidade pelada", "quanto cobrar pelada", "caixa da pelada", "controle de pagamento futebol", "cobrar amigos futebol", "rateio quadra"],
+  "related": ["esquemas-taticos-do-futsal", "quantos-jogos-tem-um-campeonato"],
+  "faq": [
+    {"q": "Como calcular o valor da mensalidade da pelada?", "a": "Some os custos do mês (aluguel da quadra, bola, colete, água), acrescente uma reserva de 10% a 20% e divida pelo número de jogadores que pagam. Goleiro isento, se o grupo combinar, sai dessa divisão."},
+    {"q": "É melhor cobrar mensalidade ou por jogo?", "a": "Mensalidade dá previsibilidade para pagar a quadra. Por jogo é mais justo para quem não vem sempre. Muitos grupos misturam: fixos pagam por mês e avulsos pagam por jogo, um pouco mais caro."},
+    {"q": "O que fazer com quem não paga?", "a": "Combine uma regra antes: por exemplo, quem estiver devendo mais de um período não entra na lista do jogo. Mandar a lista de quem pagou no grupo, sem citar ninguém em particular, resolve a maioria dos casos."},
+    {"q": "Goleiro paga mensalidade na pelada?", "a": "Depende do grupo. É comum o goleiro fixo ser isento porque é difícil de achar, mas não é regra. O importante é combinar e deixar claro para todos."}
+  ]
+}
+-->
+<h2>Passo 1: some o custo real do mês</h2>
+        <p>Antes de falar em valor, liste tudo que a pelada gasta. A maioria dos grupos esquece dos custos pequenos e fica no prejuízo:</p>
+        <ul>
+          <li><strong>Aluguel da quadra ou do campo</strong>: o maior custo, quase sempre por hora.</li>
+          <li><strong>Material</strong>: bola nova a cada poucos meses, coletes, bomba de ar.</li>
+          <li><strong>Extras</strong>: água, gelo, kit de primeiros socorros, juiz quando tem.</li>
+          <li><strong>Reserva</strong>: de 10% a 20% para o mês em que metade do grupo some e a quadra continua cobrando.</li>
+        </ul>
+
+        <section class="tool" id="calculadora">
+          <h3>Calculadora da mensalidade</h3>
+          <form id="cx" onsubmit="return false">
+            <div class="row">
+              <label>Aluguel por jogo (R$)<input id="x-quadra" type="number" min="0" step="10" value="200" inputmode="decimal" /></label>
+              <label>Jogos no mês<input id="x-jogos" type="number" min="1" max="31" value="4" inputmode="numeric" /></label>
+              <label>Outros gastos no mês (R$)<input id="x-extra" type="number" min="0" step="10" value="40" inputmode="decimal" /></label>
+            </div>
+            <div class="row">
+              <label>Jogadores que pagam<input id="x-pagantes" type="number" min="1" max="200" value="16" inputmode="numeric" /></label>
+              <label>Reserva (%)<input id="x-reserva" type="number" min="0" max="100" value="15" inputmode="numeric" /></label>
+            </div>
+          </form>
+          <div class="result" id="x-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const num = (id) => Math.max(0, parseFloat($(id).value) || 0);
+            const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const stat = (v, t) => `<div class="stat"><b>${v}</b><span>${t}</span></div>`;
+            function calc() {
+              const jogos = Math.max(1, num('x-jogos'));
+              const pag = Math.max(1, num('x-pagantes'));
+              const custo = num('x-quadra') * jogos + num('x-extra');
+              const total = custo * (1 + num('x-reserva') / 100);
+              const mensal = Math.ceil(total / pag);
+              const avulso = Math.ceil((custo / jogos / pag) * 1.3);
+              $('x-out').innerHTML = `<div class="stats">${stat(brl(custo), 'custo do mês')}${stat(brl(mensal), 'mensalidade por jogador')}${stat(brl(avulso), 'sugestão para avulso, por jogo')}</div><p class="tip">A mensalidade já inclui a reserva e foi arredondada para cima. O avulso sai cerca de 30% mais caro por jogo que o fixo, para compensar quem garante a quadra todo mês.</p>`;
+            }
+            $('cx').addEventListener('input', calc);
+            calc();
+          })();
+        </script>
+
+        <h2>Passo 2: fixo, avulso ou os dois</h2>
+        <p>Não existe modelo certo. Cada grupo tem um jeito, e o que funciona é o que todo mundo entende:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Modelo</th><th>Bom para</th><th>Cuidado com</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Mensalidade fixa</strong></td><td>Grupo fechado que joga toda semana</td><td>Quem paga e falta se sente lesado</td></tr>
+              <tr><td><strong>Por jogo</strong></td><td>Grupo que muda muito</td><td>Mês fraco deixa a quadra sem pagar</td></tr>
+              <tr><td><strong>Misto</strong></td><td>Base de fixos + convidados</td><td>Precisa controlar duas listas</td></tr>
+              <tr><td><strong>Semanal ou quinzenal</strong></td><td>Quem não gosta de pagar tudo de uma vez</td><td>Mais cobranças no mês</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Combine também as exceções: goleiro isento, desconto para quem traz a bola, valor diferente para quem só joga um tempo. Tudo vale, desde que esteja combinado.</p>
+
+        <h2>Passo 3: cobrar sem virar o chato do grupo</h2>
+        <p>O que desgasta não é cobrar, é cobrar um por um no privado. Três regras que funcionam:</p>
+        <ol>
+          <li><strong>Data fixa.</strong> "Pagamento até o dia 5" é melhor que "quando der".</li>
+          <li><strong>Lista pública.</strong> Mande no grupo quem já pagou, não quem está devendo. Quem não está na lista entende sozinho.</li>
+          <li><strong>Transparência.</strong> Uma vez por mês, mostre quanto entrou, quanto saiu e quanto sobrou. Ninguém reclama de pagar quando vê para onde vai o dinheiro.</li>
+        </ol>
+        <div class="tip">
+          <p><strong>Modelo de mensagem:</strong></p>
+          <p>⚽ Caixa da pelada, novembro<br />✅ Pagos: João, Marcos, Pedro, Lucas, Rafa (5 de 16)<br />💰 Valor: R$ 61 · Pix até dia 5<br />📊 Saldo do caixa: R$ 84</p>
+        </div>
+
+        {{cta}}
+
+        <h2>Planilha ou app?</h2>
+        <p>Planilha funciona enquanto o organizador tem paciência. O problema aparece quando alguém paga adiantado, outro paga metade, o goleiro é isento e o convidado pagou só um jogo. Um app de caixa da pelada guarda isso por jogador e gera a cobrança pronta para mandar no grupo, sem montar à mão toda semana.</p>

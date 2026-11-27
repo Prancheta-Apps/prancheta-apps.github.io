@@ -8,6 +8,7 @@ Site estático da Prancheta Apps (HTML e CSS puros, sem build). Abra `index.html
 - `assets/`: logo, ícones dos apps e a fonte Oswald (OFL), servida daqui.
 - `app-ads.txt`: exigido pelo AdMob. Precisa ficar na raiz do domínio cadastrado como site do desenvolvedor na Play Store (`https://prancheta.cloud/app-ads.txt`).
 
+- `blog/`: o blog em português. Não edite o HTML gerado: escreva o post em `tools/blog/posts/<slug>.html` (cabeçalho JSON com título, descrição, app do CTA, FAQ e relacionados; `{{cta}}` põe o cartão do app no meio do texto e `{{quadra ...}}` desenha uma quadra de futsal) e rode `node tools/blog/build.mjs`. O script gera os posts, o índice, o `feed.xml` e atualiza o bloco do blog no `sitemap.xml`. Os links da Play levam `utm_source=blog` e `utm_campaign=<slug>`.
 - `robots.txt`: libera todos os robôs, inclusive os das IAs (GPTBot, ClaudeBot, PerplexityBot etc.), e aponta o sitemap.
 - `sitemap.xml`: todas as páginas, com os seis idiomas ligados por `hreflang`. Página nova entra aqui.
 - `llms.txt`: resumo do site e dos apps para as IAs. Mudou um app, mude aqui.

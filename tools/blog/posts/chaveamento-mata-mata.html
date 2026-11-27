@@ -1,0 +1,120 @@
+<!--
+{
+  "title": "Chaveamento de mata-mata: gerador para 4 a 32 times",
+  "h1": "Chaveamento de mata-mata: como montar com qualquer número de times",
+  "description": "Gere o chaveamento do mata-mata grátis com 6, 10, 12 ou qualquer número de times. Entenda quem passa direto (bye), cabeças de chave e o cruzamento 1º x último.",
+  "lead": "Com 8 ou 16 times o mata-mata se monta sozinho. Com 6, 10 ou 12, alguém precisa passar direto, e é aí que o chaveamento costuma dar briga. Veja a regra e gere o seu.",
+  "tag": "Campeonato",
+  "app": "tabela",
+  "date": "2026-11-27",
+  "order": 10,
+  "minutes": 5,
+  "keywords": ["chaveamento mata-mata", "chave de torneio", "chaveamento 6 times", "chaveamento 12 times", "gerador de chaveamento", "cabeça de chave"],
+  "related": ["quantos-jogos-tem-um-campeonato", "regulamento-de-campeonato-amador"],
+  "faq": [
+    {"q": "Como fazer chaveamento com 6 times?", "a": "Complete até 8 (a próxima potência de 2). Faltam 2, então os 2 melhores times passam direto para a semifinal e os outros 4 jogam a primeira fase: 3º x 6º e 4º x 5º."},
+    {"q": "O que é bye no chaveamento?", "a": "É quando um time passa para a fase seguinte sem jogar, porque o número de times não fecha a chave. Os byes vão para os cabeças de chave, geralmente os de melhor campanha."},
+    {"q": "Por que o 1º enfrenta o último no mata-mata?", "a": "Para premiar a campanha e evitar que os dois melhores se cruzem cedo. Na chave certa, o 1º e o 2º só podem se enfrentar na final."}
+  ]
+}
+-->
+<section class="tool" id="gerador">
+          <h3>Gerador de chaveamento</h3>
+          <form id="ch" onsubmit="return false">
+            <label>Times em ordem de força ou de campanha (o primeiro é o cabeça de chave 1)
+              <textarea id="h-times" spellcheck="false">Atlético Praça
+Sport Rua 7
+Estrela do Norte
+Juventude FC
+Amigos FC
+Unidos da Vila</textarea>
+            </label>
+            <div class="row" style="margin-top:12px">
+              <label class="check"><input id="h-sorteio" type="checkbox" /> Sortear em vez de usar a ordem</label>
+            </div>
+            <button type="button" id="h-print">Imprimir</button>
+          </form>
+          <div class="result" id="h-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+            const nomeFase = (k) => ({ 1: 'Final', 2: 'Semifinal', 4: 'Quartas de final', 8: 'Oitavas de final', 16: '16 avos de final', 32: '32 avos de final' })[k];
+            function ordem(size) {
+              let o = [1];
+              while (o.length < size) { const m = o.length * 2 + 1; o = o.flatMap((s) => [s, m - s]); }
+              return o;
+            }
+            let embaralhado = null;
+            function gerar() {
+              let ts = [...new Set($('h-times').value.split('\n').map((s) => s.trim()).filter(Boolean))].slice(0, 64);
+              if (ts.length < 2) { $('h-out').innerHTML = '<p class="tip">Digite pelo menos 2 times.</p>'; return; }
+              if ($('h-sorteio').checked) {
+                if (!embaralhado || embaralhado.length !== ts.length) embaralhado = ts.map((_, i) => i).sort(() => Math.random() - 0.5);
+                ts = embaralhado.map((i) => ts[i]);
+              } else embaralhado = null;
+              const size = 2 ** Math.ceil(Math.log2(ts.length));
+              const seeds = ordem(size).map((s) => (s <= ts.length ? ts[s - 1] : null));
+              let atual = [];
+              for (let i = 0; i < size; i += 2) atual.push([seeds[i], seeds[i + 1]]);
+              const fases = [];
+              let jogo = 0;
+              const primeira = [];
+              const prox = atual.map(([a, b]) => {
+                if (a && b) { jogo++; primeira.push(`<li>J${jogo}: ${esc(a)} x ${esc(b)}</li>`); return `Venc. J${jogo}`; }
+                const quem = a || b;
+                primeira.push(`<li class="bye">${esc(quem)} passa direto</li>`);
+                return esc(quem);
+              });
+              fases.push([nomeFase(size / 2), primeira]);
+              let lista = prox;
+              while (lista.length > 1) {
+                const itens = [], seguinte = [];
+                for (let i = 0; i < lista.length; i += 2) { jogo++; itens.push(`<li>J${jogo}: ${lista[i]} x ${lista[i + 1]}</li>`); seguinte.push(`Venc. J${jogo}`); }
+                fases.push([nomeFase(lista.length / 2), itens]);
+                lista = seguinte;
+              }
+              const byes = size - ts.length;
+              $('h-out').innerHTML = `<p><strong>${ts.length} times, ${ts.length - 1} jogos${byes ? `, ${byes} passa${byes > 1 ? 'm' : ''} direto da 1ª fase` : ''}.</strong></p><div class="rounds">${fases.map(([n, li]) => `<div class="round"><b>${n}</b><ul>${li.join('')}</ul></div>`).join('')}</div>`;
+            }
+            $('ch').addEventListener('input', gerar);
+            $('h-print').addEventListener('click', () => { document.body.classList.add('print-rounds'); window.print(); });
+            window.addEventListener('afterprint', () => document.body.classList.remove('print-rounds'));
+            gerar();
+          })();
+        </script>
+
+        <h2>A regra de ouro: potência de 2</h2>
+        <p>Um mata-mata fecha certinho quando o número de times é <strong>4, 8, 16 ou 32</strong>. Com qualquer outro número, complete até a próxima potência de 2: a diferença é o número de times que <strong>passam direto</strong> da primeira fase (o famoso <em>bye</em>).</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="num">Times</th><th class="num">Chave de</th><th class="num">Passam direto</th><th class="num">Jogos na 1ª fase</th></tr></thead>
+            <tbody>
+              <tr><td class="num">5</td><td class="num">8</td><td class="num">3</td><td class="num">1</td></tr>
+              <tr><td class="num">6</td><td class="num">8</td><td class="num">2</td><td class="num">2</td></tr>
+              <tr><td class="num">7</td><td class="num">8</td><td class="num">1</td><td class="num">3</td></tr>
+              <tr><td class="num">10</td><td class="num">16</td><td class="num">6</td><td class="num">2</td></tr>
+              <tr><td class="num">12</td><td class="num">16</td><td class="num">4</td><td class="num">4</td></tr>
+              <tr><td class="num">20</td><td class="num">32</td><td class="num">12</td><td class="num">4</td></tr>
+              <tr><td class="num">24</td><td class="num">32</td><td class="num">8</td><td class="num">8</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Quem passa direto são os <strong>cabeças de chave</strong>: os de melhor campanha na fase anterior, os campeões da última edição ou, se não houver critério, os sorteados.</p>
+
+        <h2>Cruzamento: 1º contra o último</h2>
+        <p>Na chave bem montada, o 1º colocado enfrenta o pior classificado, o 2º enfrenta o penúltimo, e assim por diante. E mais: o 1º e o 2º ficam em lados opostos da chave, então <strong>só podem se encontrar na final</strong>. Com 8 times, os jogos ficam:</p>
+        <ul>
+          <li>Lado A: 1º x 8º e 4º x 5º</li>
+          <li>Lado B: 2º x 7º e 3º x 6º</li>
+        </ul>
+        <p>É a mesma lógica das chaves de tênis e da NBA. O gerador acima monta assim automaticamente.</p>
+
+        <h2>Sorteio ou campanha?</h2>
+        <p>Se o mata-mata vem depois de uma fase de grupos ou de pontos corridos, use a campanha: é o prêmio de quem jogou melhor. Se é um torneio de um dia só, sem fase anterior, sorteie, de preferência na frente de todo mundo.</p>
+
+        {{cta}}
+
+        <h2>Empate no mata-mata</h2>
+        <p>Deixe no <a href="../regulamento-de-campeonato-amador/">regulamento</a> o que acontece se empatar: pênaltis direto, prorrogação ou vantagem para o time de melhor campanha. E, se for ida e volta, se vale o saldo agregado. Para saber quantos jogos o torneio inteiro vai ter, use a <a href="../quantos-jogos-tem-um-campeonato/">calculadora de jogos</a>.</p>

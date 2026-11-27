@@ -29,6 +29,8 @@
   <body>
     <header class="doc-header">
       <h1 class="doc-brand"><img src="assets/logo.png" alt="" width="40" height="40" />Prancheta <span>Apps</span></h1>
+      <div class="header-right">
+      <nav class="top-nav" aria-label="Principal"><a href="blog/">Blog</a></nav>
       <label class="lang-picker" aria-label="Idioma / Language">
         <select onchange="if (this.value) location.href = this.value">
           <option value="" selected>🇧🇷 Português</option>
@@ -39,6 +41,7 @@
           <option value="de/">🇩🇪 Deutsch</option>
         </select>
       </label>
+      </div>
     </header>
     <main>
       <section id="apps" class="section">
@@ -84,9 +87,72 @@
         </ul>
         <p class="more"><a href="https://play.google.com/store/apps/dev?id=7964185345858453468&amp;hl=pt-BR" target="_blank" rel="noopener">Todos os apps no Google Play →</a></p>
       </section>
+      <!-- blog-home -->
+      <section id="blog" class="section home-blog">
+        <h2>Do blog</h2>
+        <p class="home-blog-sub">Calculadoras, geradores e guias para quem organiza campeonato, pelada e time.</p>
+        <ul class="post-list">
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/quantos-jogos-tem-um-campeonato/">
+              <span class="tag">Campeonato</span>
+              <h3>Quantos jogos tem um campeonato? Calcule em segundos</h3>
+              <p>Calcule quantos jogos e rodadas tem seu campeonato em pontos corridos, mata-mata ou grupos. Tabela pronta de 3 a 20 times e a fórmula explicada.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/como-montar-tabela-de-jogos-do-campeonato/">
+              <span class="tag">Campeonato</span>
+              <h3>Como montar a tabela de jogos de um campeonato, rodada por rodada</h3>
+              <p>Gere a tabela de jogos do seu campeonato grátis: digite os times e veja todas as rodadas. Entenda o método do rodízio, a folga e o mando de campo.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/criterios-de-desempate-no-futebol/">
+              <span class="tag">Regulamento</span>
+              <h3>Critérios de desempate no futebol: a ordem certa e como usar no seu campeonato</h3>
+              <p>Vitórias, saldo, gols pró ou confronto direto? Veja a ordem de desempate do Brasileirão e da Copa de 2026, um exemplo prático e um modelo para o regulamento.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/mensalidade-da-pelada/">
+              <span class="tag">Pelada</span>
+              <h3>Mensalidade da pelada: quanto cobrar e como organizar o caixa sem dor de cabeça</h3>
+              <p>Calcule o valor justo da mensalidade da pelada, escolha entre fixo e avulso e cobre sem constrangimento. Com calculadora e modelo de mensagem para o grupo.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/esquemas-taticos-do-futsal/">
+              <span class="tag">Tática</span>
+              <h3>Esquemas táticos do futsal: 3-1, 2-2, 4-0 e goleiro-linha explicados</h3>
+              <p>Entenda os principais sistemas do futsal com desenhos: 3-1 (losango), 2-2 (quadrado), 4-0 (rodízio) e goleiro-linha. Funções do fixo, ala e pivô e quando usar cada um.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+          <li class="post-card">
+            <span class="post-cover"></span>
+            <a href="blog/futebol-de-botao-como-jogar/">
+              <span class="tag">Futebol de botão</span>
+              <h3>Futebol de botão: como jogar, as regras básicas e as modalidades</h3>
+              <p>Aprenda a jogar futebol de botão: o material, como funciona a jogada, as modalidades de 1, 3 e 12 toques e como jogar no celular. Guia para iniciantes.</p>
+              <span class="read">Ler →</span>
+            </a>
+          </li>
+        </ul>
+        <p class="more"><a href="blog/">Ver todos os 15 posts →</a></p>
+      </section>
+      <!-- /blog-home -->
       <section class="section follow">
         <h2>Acompanhe</h2>
-        <p>Novidades, vídeos e bastidores dos apps.</p>
+        <p>Novidades, vídeos e bastidores dos apps. E guias para quem organiza campeonato e pelada no <a href="blog/">blog</a>.</p>
         <div class="social">
           <a class="button button-outline" href="https://www.youtube.com/@prancheta_apps" target="_blank" rel="noopener">YouTube</a>
           <a class="button button-outline" href="https://www.instagram.com/prancheta_apps/" target="_blank" rel="noopener">Instagram</a>
@@ -94,6 +160,7 @@
       </section>
     </main>
     <footer class="footer">
+      <a href="blog/">Blog</a>
       <a href="termos/">Termos e privacidade</a>
       <a href="mailto:contato@prancheta.cloud">Contato</a>
       <span>© 2026 Prancheta Apps. Todos os direitos reservados.</span>

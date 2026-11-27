@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#23803a" />
+    <title>Quantos jogos tem um campeonato? Calculadora e tabela</title>
+    <meta name="description" content="Calcule quantos jogos e rodadas tem seu campeonato em pontos corridos, mata-mata ou grupos. Tabela pronta de 3 a 20 times e a fórmula explicada." />
+    <link rel="canonical" href="https://prancheta.cloud/blog/quantos-jogos-tem-um-campeonato/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://prancheta.cloud/blog/quantos-jogos-tem-um-campeonato/" />
+    <meta property="og:title" content="Quantos jogos tem um campeonato? Calculadora e tabela" />
+    <meta property="og:description" content="Calcule quantos jogos e rodadas tem seu campeonato em pontos corridos, mata-mata ou grupos. Tabela pronta de 3 a 20 times e a fórmula explicada." />
+    <meta property="og:image" content="https://prancheta.cloud/assets/og.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Prancheta Apps" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title="Blog da Prancheta" href="https://prancheta.cloud/blog/feed.xml" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Quantos jogos tem um campeonato? Calcule em segundos","description":"Calcule quantos jogos e rodadas tem seu campeonato em pontos corridos, mata-mata ou grupos. Tabela pronta de 3 a 20 times e a fórmula explicada.","datePublished":"2026-11-27","dateModified":"2026-11-27","inLanguage":"pt-BR","mainEntityOfPage":"https://prancheta.cloud/blog/quantos-jogos-tem-um-campeonato/","image":"https://prancheta.cloud/assets/og.jpg","author":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"publisher":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"keywords":"quantos jogos tem um campeonato, quantos jogos com 8 times, calcular jogos campeonato, pontos corridos, mata-mata, fase de grupos"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Prancheta Apps","item":"https://prancheta.cloud/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://prancheta.cloud/blog/"},{"@type":"ListItem","position":3,"name":"Quantos jogos tem um campeonato? Calcule em segundos","item":"https://prancheta.cloud/blog/quantos-jogos-tem-um-campeonato/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quantos jogos tem um campeonato com 8 times em pontos corridos?","acceptedAnswer":{"@type":"Answer","text":"Em turno único são 28 jogos, divididos em 7 rodadas de 4 jogos. Com ida e volta são 56 jogos em 14 rodadas."}},{"@type":"Question","name":"Quantos jogos tem um mata-mata com 16 times?","acceptedAnswer":{"@type":"Answer","text":"São 15 jogos em jogo único: 8 nas oitavas, 4 nas quartas, 2 na semifinal e 1 na final. Com disputa de 3º lugar, 16 jogos."}},{"@type":"Question","name":"Qual a fórmula para calcular os jogos de pontos corridos?","acceptedAnswer":{"@type":"Answer","text":"Multiplique o número de times pelo número de times menos um e divida por dois: n × (n − 1) ÷ 2. Com ida e volta, não divida por dois."}},{"@type":"Question","name":"E quando o número de times é ímpar?","acceptedAnswer":{"@type":"Answer","text":"O total de jogos segue a mesma fórmula, mas em cada rodada um time folga. Por isso o campeonato tem uma rodada a mais: com 7 times são 21 jogos em 7 rodadas."}}]}]}</script>
+    <link rel="icon" href="../../assets/icone-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icone-192.png" />
+    <link rel="preload" href="../../assets/oswald-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="doc-header">
+      <a class="doc-brand" href="../../"><img src="../../assets/logo.png" alt="" width="40" height="40" />Prancheta <span>Apps</span></a>
+      <nav class="top-nav" aria-label="Principal">
+        <a href="../../">Apps</a>
+        <a href="../../blog/" aria-current="page">Blog</a>
+      </nav>
+    </header>
+    <main>
+      <article class="post">
+        <nav class="crumbs" aria-label="Trilha"><a href="../../">Início</a> › <a href="../">Blog</a> › Campeonato</nav>
+        <h1>Quantos jogos tem um campeonato? Calcule em segundos</h1>
+        <p class="lead">Antes de alugar o campo e marcar as datas, você precisa saber quantos jogos o campeonato vai ter. A conta é simples, e a calculadora abaixo faz ela por você.</p>
+        <p class="meta">Por Prancheta Apps · <time datetime="2026-11-27">27 de novembro de 2026</time> · 5 min de leitura</p>
+        <nav class="toc" aria-label="Neste guia">
+          <strong>Neste guia</strong>
+          <ol>
+            <li><a href="#calculadora">Calculadora de jogos</a></li>
+            <li><a href="#pontos-corridos">Pontos corridos: a fórmula</a></li>
+            <li><a href="#mata-mata">Mata-mata: a conta mais fácil</a></li>
+            <li><a href="#grupos">Grupos + mata-mata</a></li>
+            <li><a href="#tabela">Tabela pronta de 3 a 20 times</a></li>
+          </ol>
+        </nav>
+
+        <section class="tool" id="calculadora">
+          <h3>Calculadora de jogos do campeonato</h3>
+          <form id="calc" onsubmit="return false">
+            <div class="row">
+              <label>Número de times<input id="c-times" type="number" min="2" max="128" value="8" inputmode="numeric" /></label>
+              <label>Formato
+                <select id="c-formato">
+                  <option value="liga">Pontos corridos</option>
+                  <option value="mata">Mata-mata</option>
+                  <option value="grupos">Grupos + mata-mata</option>
+                </select>
+              </label>
+              <label id="c-grupos-wrap" hidden>Quantos grupos<input id="c-grupos" type="number" min="1" max="32" value="2" inputmode="numeric" /></label>
+              <label id="c-passam-wrap" hidden>Passam por grupo<input id="c-passam" type="number" min="1" max="16" value="2" inputmode="numeric" /></label>
+              <label>Jogos por dia<input id="c-dia" type="number" min="1" max="50" value="4" inputmode="numeric" /></label>
+            </div>
+            <label class="check"><input id="c-volta" type="checkbox" /> <span id="c-volta-txt">Ida e volta</span></label>
+            <label class="check"><input id="c-terceiro" type="checkbox" /> Disputa de 3º lugar</label>
+          </form>
+          <div class="result" id="c-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const int = (id, min) => Math.max(min, parseInt($(id).value, 10) || min);
+            const liga = (n, turnos) => ({ jogos: (n * (n - 1)) / 2 * turnos, rodadas: (n % 2 ? n : n - 1) * turnos });
+            const fases = (n) => Math.ceil(Math.log2(n));
+            const stat = (v, t) => `<div class="stat"><b>${v.toLocaleString('pt-BR')}</b><span>${t}</span></div>`;
+            function calc() {
+              const n = int('c-times', 2);
+              const formato = $('c-formato').value;
+              const volta = $('c-volta').checked ? 2 : 1;
+              const terceiro = $('c-terceiro').checked ? 1 : 0;
+              const porDia = int('c-dia', 1);
+              $('c-grupos-wrap').hidden = $('c-passam-wrap').hidden = formato !== 'grupos';
+              $('c-volta-txt').textContent = formato === 'grupos' ? 'Ida e volta nos grupos' : 'Ida e volta';
+              $('c-terceiro').parentElement.hidden = formato === 'liga';
+              let jogos, etapas, nota = '';
+              if (formato === 'liga') {
+                const r = liga(n, volta);
+                jogos = r.jogos;
+                etapas = stat(r.rodadas, 'rodadas') + stat(Math.floor(n / 2), 'jogos por rodada');
+                if (n % 2) nota = 'Como o número de times é ímpar, um time folga em cada rodada.';
+              } else if (formato === 'mata') {
+                const f = fases(n);
+                jogos = (n - 1) * volta + terceiro;
+                etapas = stat(f, 'fases');
+                const byes = 2 ** f - n;
+                if (byes) nota = `${byes} time${byes > 1 ? 's passam' : ' passa'} direto da primeira fase, porque ${n} não é potência de 2 (4, 8, 16, 32…).`;
+              } else {
+                const g = Math.min(int('c-grupos', 1), Math.floor(n / 2));
+                const base = Math.floor(n / g), extra = n % g;
+                let jg = 0;
+                for (let i = 0; i < g; i++) jg += liga(base + (i < extra ? 1 : 0), volta).jogos;
+                const q = Math.min(int('c-passam', 1), base);
+                const cls = g * q;
+                const jm = cls > 1 ? cls - 1 + terceiro : 0;
+                jogos = jg + jm;
+                etapas = stat(jg, 'jogos nos grupos') + stat(jm, 'jogos no mata-mata');
+                nota = `${g} grupos de ${extra ? `${base} a ${base + 1}` : base} times; ${cls} classificados para o mata-mata.`;
+                if (cls > 1 && (cls & (cls - 1))) nota += ' Como o número de classificados não é potência de 2, alguns passam direto da primeira fase do mata-mata (ou use os melhores terceiros).';
+              }
+              $('c-out').innerHTML = `<div class="stats">${stat(jogos, 'jogos no total')}${etapas}${stat(Math.ceil(jogos / porDia), 'dias de jogo')}</div>${nota ? `<p class="tip">${nota}</p>` : ''}`;
+            }
+            $('calc').addEventListener('input', calc);
+            calc();
+          })();
+        </script>
+
+        <h2 id="pontos-corridos">Pontos corridos: todo mundo joga contra todo mundo</h2>
+        <p>No sistema de pontos corridos (também chamado de turno, liga ou "todos contra todos"), cada time enfrenta todos os outros uma vez. A fórmula é:</p>
+        <p class="tip"><strong>Jogos = n × (n − 1) ÷ 2</strong>, onde <em>n</em> é o número de times. Com ida e volta (returno), é só não dividir por dois.</p>
+        <p>Exemplo com 8 times: 8 × 7 ÷ 2 = <strong>28 jogos</strong>. Como cada rodada tem 4 jogos (8 times jogando ao mesmo tempo), são <strong>7 rodadas</strong>.</p>
+        <p>Com número ímpar de times, sempre sobra um time em cada rodada, que folga. O total de jogos é o mesmo da fórmula, mas o campeonato ganha uma rodada: 7 times dão 21 jogos em 7 rodadas de 3 jogos.</p>
+        <p>Pontos corridos é o formato mais justo, porque um jogo ruim não elimina ninguém. O lado ruim é que cresce rápido: dobrar os times quase quadruplica os jogos. Com 16 times já são 120 jogos em turno único.</p>
+
+        <h2 id="mata-mata">Mata-mata: sempre um jogo a menos que o número de times</h2>
+        <p>No mata-mata cada jogo elimina um time. Para sobrar um campeão, todos os outros precisam ser eliminados, então:</p>
+        <p class="tip"><strong>Jogos = n − 1</strong> (jogo único). Com ida e volta em todas as fases, o dobro. Com disputa de 3º lugar, some 1.</p>
+        <p>16 times dão 15 jogos: 8 nas oitavas, 4 nas quartas, 2 nas semis e a final. Quando o número de times não é potência de 2 (4, 8, 16, 32), alguns times passam direto da primeira fase. Com 12 times, por exemplo, 4 times ficam de fora da primeira fase e entram nas quartas.</p>
+        <p>É o formato mais rápido, bom para torneio de um dia só. O risco é o time viajar, pagar inscrição e jogar uma vez só.</p>
+
+        <h2 id="grupos">Grupos + mata-mata: o formato da Copa</h2>
+        <p>O meio-termo mais usado em campeonato amador é dividir os times em grupos de pontos corridos e levar os melhores para o mata-mata. Para contar os jogos, some as duas partes:</p>
+        <ul>
+          <li><strong>Grupos:</strong> aplique n × (n − 1) ÷ 2 em cada grupo e some.</li>
+          <li><strong>Mata-mata:</strong> número de classificados − 1.</li>
+        </ul>
+        <p>Exemplo: 16 times em 4 grupos de 4, passando os 2 melhores. Cada grupo tem 6 jogos (24 no total) e o mata-mata com 8 times tem 7 jogos. <strong>Total: 31 jogos</strong>, contra 120 se fosse pontos corridos. Todo time joga pelo menos 3 vezes.</p>
+
+        <aside class="cta">
+          <img src="../../assets/tabela-de-futebol.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Tabela de Futebol</strong>
+            <p>Cadastre os times, o app monta os jogos e a classificação sai sozinha a cada placar. Mata-mata, grupos, artilharia e PDF para o grupo.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dquantos-jogos-tem-um-campeonato" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+
+        <h2 id="tabela">Tabela pronta: jogos de 3 a 20 times</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Times</th><th class="num">Pontos corridos (turno)</th><th class="num">Rodadas</th><th class="num">Ida e volta</th><th class="num">Mata-mata</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>3</td><td class="num">3</td><td class="num">3</td><td class="num">6</td><td class="num">2</td></tr>
+              <tr><td>4</td><td class="num">6</td><td class="num">3</td><td class="num">12</td><td class="num">3</td></tr>
+              <tr><td>5</td><td class="num">10</td><td class="num">5</td><td class="num">20</td><td class="num">4</td></tr>
+              <tr><td>6</td><td class="num">15</td><td class="num">5</td><td class="num">30</td><td class="num">5</td></tr>
+              <tr><td>7</td><td class="num">21</td><td class="num">7</td><td class="num">42</td><td class="num">6</td></tr>
+              <tr><td>8</td><td class="num">28</td><td class="num">7</td><td class="num">56</td><td class="num">7</td></tr>
+              <tr><td>9</td><td class="num">36</td><td class="num">9</td><td class="num">72</td><td class="num">8</td></tr>
+              <tr><td>10</td><td class="num">45</td><td class="num">9</td><td class="num">90</td><td class="num">9</td></tr>
+              <tr><td>12</td><td class="num">66</td><td class="num">11</td><td class="num">132</td><td class="num">11</td></tr>
+              <tr><td>14</td><td class="num">91</td><td class="num">13</td><td class="num">182</td><td class="num">13</td></tr>
+              <tr><td>16</td><td class="num">120</td><td class="num">15</td><td class="num">240</td><td class="num">15</td></tr>
+              <tr><td>18</td><td class="num">153</td><td class="num">17</td><td class="num">306</td><td class="num">17</td></tr>
+              <tr><td>20</td><td class="num">190</td><td class="num">19</td><td class="num">380</td><td class="num">19</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Para referência: o Brasileirão tem 20 times em ida e volta, e por isso são 380 jogos em 38 rodadas.</p>
+
+        <h2>Qual formato escolher?</h2>
+        <ul>
+          <li><strong>Tem um dia só (torneio, festa, interclasse):</strong> mata-mata ou grupos de 3 com mata-mata curto.</li>
+          <li><strong>Tem alguns fins de semana:</strong> grupos + mata-mata. Todo mundo joga várias vezes e ainda tem final.</li>
+          <li><strong>É uma liga que dura meses:</strong> pontos corridos, de preferência com ida e volta.</li>
+        </ul>
+        <p>Decidido o formato, o próximo passo é <a href="../como-montar-tabela-de-jogos-do-campeonato/">montar a tabela de jogos rodada por rodada</a> e combinar no regulamento os <a href="../criterios-de-desempate-no-futebol/">critérios de desempate</a>.</p>
+        <aside class="cta">
+          <img src="../../assets/tabela-de-futebol.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Tabela de Futebol</strong>
+            <p>Cadastre os times, o app monta os jogos e a classificação sai sozinha a cada placar. Mata-mata, grupos, artilharia e PDF para o grupo.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dquantos-jogos-tem-um-campeonato" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+        <section class="faq">
+          <h2>Perguntas frequentes</h2>
+          <details><summary>Quantos jogos tem um campeonato com 8 times em pontos corridos?</summary><p>Em turno único são 28 jogos, divididos em 7 rodadas de 4 jogos. Com ida e volta são 56 jogos em 14 rodadas.</p></details>
+          <details><summary>Quantos jogos tem um mata-mata com 16 times?</summary><p>São 15 jogos em jogo único: 8 nas oitavas, 4 nas quartas, 2 na semifinal e 1 na final. Com disputa de 3º lugar, 16 jogos.</p></details>
+          <details><summary>Qual a fórmula para calcular os jogos de pontos corridos?</summary><p>Multiplique o número de times pelo número de times menos um e divida por dois: n × (n − 1) ÷ 2. Com ida e volta, não divida por dois.</p></details>
+          <details><summary>E quando o número de times é ímpar?</summary><p>O total de jogos segue a mesma fórmula, mas em cada rodada um time folga. Por isso o campeonato tem uma rodada a mais: com 7 times são 21 jogos em 7 rodadas.</p></details>
+        </section>
+        <section class="related">
+          <h2>Leia também</h2>
+          <ul>
+            <li><a href="../como-montar-tabela-de-jogos-do-campeonato/">Como montar a tabela de jogos de um campeonato, rodada por rodada</a></li>
+            <li><a href="../criterios-de-desempate-no-futebol/">Critérios de desempate no futebol: a ordem certa e como usar no seu campeonato</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer class="footer">
+      <a href="../../blog/">Blog</a>
+      <a href="../../termos/">Termos e privacidade</a>
+      <a href="mailto:contato@prancheta.cloud">Contato</a>
+      <span>© 2026 Prancheta Apps. Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>
