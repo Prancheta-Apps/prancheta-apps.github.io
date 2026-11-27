@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#23803a" />
+    <title>Como montar a tabela de jogos do campeonato (gerador grátis)</title>
+    <meta name="description" content="Gere a tabela de jogos do seu campeonato grátis: digite os times e veja todas as rodadas. Entenda o método do rodízio, a folga e o mando de campo." />
+    <link rel="canonical" href="https://prancheta.cloud/blog/como-montar-tabela-de-jogos-do-campeonato/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://prancheta.cloud/blog/como-montar-tabela-de-jogos-do-campeonato/" />
+    <meta property="og:title" content="Como montar a tabela de jogos do campeonato (gerador grátis)" />
+    <meta property="og:description" content="Gere a tabela de jogos do seu campeonato grátis: digite os times e veja todas as rodadas. Entenda o método do rodízio, a folga e o mando de campo." />
+    <meta property="og:image" content="https://prancheta.cloud/assets/og.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Prancheta Apps" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title="Blog da Prancheta" href="https://prancheta.cloud/blog/feed.xml" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Como montar a tabela de jogos de um campeonato, rodada por rodada","description":"Gere a tabela de jogos do seu campeonato grátis: digite os times e veja todas as rodadas. Entenda o método do rodízio, a folga e o mando de campo.","datePublished":"2026-11-27","dateModified":"2026-11-27","inLanguage":"pt-BR","mainEntityOfPage":"https://prancheta.cloud/blog/como-montar-tabela-de-jogos-do-campeonato/","image":"https://prancheta.cloud/assets/og.jpg","author":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"publisher":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"keywords":"como montar tabela de campeonato, gerador de tabela de jogos, tabela de jogos pontos corridos, rodízio de times, tabela de campeonato para imprimir"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Prancheta Apps","item":"https://prancheta.cloud/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://prancheta.cloud/blog/"},{"@type":"ListItem","position":3,"name":"Como montar a tabela de jogos de um campeonato, rodada por rodada","item":"https://prancheta.cloud/blog/como-montar-tabela-de-jogos-do-campeonato/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como montar uma tabela de jogos com número ímpar de times?","acceptedAnswer":{"@type":"Answer","text":"Acrescente um time fictício chamado Folga e monte a tabela normalmente. Quem enfrentar a Folga não joga naquela rodada. Com 5 times, por exemplo, cada time folga uma vez em 5 rodadas."}},{"@type":"Question","name":"Como fazer o sorteio da tabela?","acceptedAnswer":{"@type":"Answer","text":"Sorteie a ordem dos times antes de aplicar o rodízio. A posição sorteada define quem joga contra quem em cada rodada, e o método garante que ninguém repete adversário."}},{"@type":"Question","name":"Como montar o returno?","acceptedAnswer":{"@type":"Answer","text":"Repita as rodadas do turno na mesma ordem, invertendo o mando: quem foi mandante no turno vira visitante no returno."}},{"@type":"Question","name":"Posso imprimir a tabela gerada?","acceptedAnswer":{"@type":"Answer","text":"Sim. Gere a tabela e use o botão Imprimir. A página esconde o resto do site na impressão e deixa só as rodadas."}}]}]}</script>
+    <link rel="icon" href="../../assets/icone-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icone-192.png" />
+    <link rel="preload" href="../../assets/oswald-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="doc-header">
+      <a class="doc-brand" href="../../"><img src="../../assets/logo.png" alt="" width="40" height="40" />Prancheta <span>Apps</span></a>
+      <nav class="top-nav" aria-label="Principal">
+        <a href="../../">Apps</a>
+        <a href="../../blog/" aria-current="page">Blog</a>
+      </nav>
+    </header>
+    <main>
+      <article class="post">
+        <nav class="crumbs" aria-label="Trilha"><a href="../../">Início</a> › <a href="../">Blog</a> › Campeonato</nav>
+        <h1>Como montar a tabela de jogos de um campeonato, rodada por rodada</h1>
+        <p class="lead">Montar a tabela no caderno parece fácil até o terceiro time jogar duas vezes na mesma rodada. Existe um método simples que nunca erra, e um gerador aqui embaixo que faz tudo sozinho.</p>
+        <p class="meta">Por Prancheta Apps · <time datetime="2026-11-27">27 de novembro de 2026</time> · 6 min de leitura</p>
+        <section class="tool" id="gerador">
+          <h3>Gerador de tabela de jogos</h3>
+          <form id="gen" onsubmit="return false">
+            <label>Times (um por linha)
+              <textarea id="g-times" spellcheck="false">Atlético Praça
+Sport Rua 7
+Estrela do Norte
+Juventude FC
+Amigos FC
+Unidos da Vila</textarea>
+            </label>
+            <div class="row" style="margin-top:12px">
+              <label class="check"><input id="g-volta" type="checkbox" /> Ida e volta (returno)</label>
+              <label class="check"><input id="g-sorteio" type="checkbox" /> Sortear a ordem</label>
+            </div>
+            <button type="button" id="g-print">Imprimir</button>
+          </form>
+          <div class="result" id="g-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+            let ordem = null;
+            function rodizio(nomes) {
+              const t = nomes.slice();
+              if (t.length % 2) t.push(null);
+              const n = t.length, rodadas = [];
+              for (let r = 0; r < n - 1; r++) {
+                const jogos = [];
+                for (let i = 0; i < n / 2; i++) {
+                  let a = t[i], b = t[n - 1 - i];
+                  if (i === 0 && r % 2) [a, b] = [b, a];
+                  jogos.push([a, b]);
+                }
+                rodadas.push(jogos);
+                t.splice(1, 0, t.pop());
+              }
+              return rodadas;
+            }
+            function gerar() {
+              let nomes = $('g-times').value.split('\n').map((s) => s.trim()).filter(Boolean);
+              nomes = [...new Set(nomes)].slice(0, 40);
+              if (nomes.length < 2) { $('g-out').innerHTML = '<p class="tip">Digite pelo menos 2 times.</p>'; return; }
+              if ($('g-sorteio').checked) {
+                if (!ordem || ordem.length !== nomes.length) ordem = nomes.map((_, i) => i).sort(() => Math.random() - 0.5);
+                nomes = ordem.map((i) => nomes[i]);
+              } else ordem = null;
+              let rodadas = rodizio(nomes);
+              if ($('g-volta').checked) rodadas = rodadas.concat(rodadas.map((js) => js.map(([a, b]) => [b, a])));
+              const total = rodadas.reduce((s, js) => s + js.filter(([a, b]) => a && b).length, 0);
+              $('g-out').innerHTML = `<p><strong>${nomes.length} times, ${rodadas.length} rodadas, ${total} jogos.</strong></p><div class="rounds">${rodadas.map((js, i) => `<div class="round"><b>${i + 1}ª rodada</b><ul>${js.map(([a, b]) => a && b ? `<li>${esc(a)} x ${esc(b)}</li>` : `<li class="bye">Folga: ${esc(a || b)}</li>`).join('')}</ul></div>`).join('')}</div>`;
+            }
+            $('gen').addEventListener('input', gerar);
+            $('g-print').addEventListener('click', () => { document.body.classList.add('print-rounds'); window.print(); });
+            window.addEventListener('afterprint', () => document.body.classList.remove('print-rounds'));
+            gerar();
+          })();
+        </script>
+
+        <h2>O método do rodízio (o mesmo das federações)</h2>
+        <p>O jeito mais usado para montar tabela de pontos corridos se chama <strong>método do polígono</strong>, ou rodízio. Ele garante três coisas que no caderno são difíceis de acertar: todo mundo enfrenta todo mundo, ninguém joga duas vezes na mesma rodada e ninguém repete adversário.</p>
+        <h3>Passo a passo com 6 times</h3>
+        <ol>
+          <li>Numere os times de 1 a 6 e escreva em duas linhas: 1, 2, 3 em cima e 6, 5, 4 embaixo.</li>
+          <li>Os times de cima jogam contra os de baixo: 1 x 6, 2 x 5, 3 x 4. Essa é a 1ª rodada.</li>
+          <li>O time 1 fica parado. Todos os outros giram uma casa no sentido horário.</li>
+          <li>Leia os novos confrontos. Repita até completar 5 rodadas (número de times menos um).</li>
+        </ol>
+        <p>Com os times do exemplo do gerador, o resultado fica assim:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rodada</th><th>Jogos</th></tr></thead>
+            <tbody>
+              <tr><td>1ª</td><td>Atlético Praça x Unidos da Vila · Sport Rua 7 x Amigos FC · Estrela do Norte x Juventude FC</td></tr>
+              <tr><td>2ª</td><td>Amigos FC x Atlético Praça · Unidos da Vila x Juventude FC · Sport Rua 7 x Estrela do Norte</td></tr>
+              <tr><td>3ª</td><td>Atlético Praça x Juventude FC · Amigos FC x Estrela do Norte · Unidos da Vila x Sport Rua 7</td></tr>
+              <tr><td>4ª</td><td>Estrela do Norte x Atlético Praça · Juventude FC x Sport Rua 7 · Amigos FC x Unidos da Vila</td></tr>
+              <tr><td>5ª</td><td>Atlético Praça x Sport Rua 7 · Estrela do Norte x Unidos da Vila · Juventude FC x Amigos FC</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>São 15 jogos, exatamente o que a fórmula de <a href="../quantos-jogos-tem-um-campeonato/">quantos jogos tem um campeonato</a> prevê para 6 times.</p>
+
+        <h2>Número ímpar de times: a folga</h2>
+        <p>Com 5, 7 ou 9 times, acrescente um time imaginário chamado <strong>Folga</strong> e monte a tabela normalmente. Quem "enfrenta" a Folga descansa naquela rodada. Cada time folga exatamente uma vez por turno, e o campeonato ganha uma rodada a mais.</p>
+
+        <h2>Mando de campo e returno</h2>
+        <p>O rodízio já alterna o mando do time fixo, para ele não jogar sempre em casa. Se o campeonato tem returno, repita as rodadas na mesma ordem e troque o mando: quem foi mandante no turno é visitante no returno.</p>
+        <div class="tip">Dica de organizador: deixe os jogos mais esperados (os clássicos do bairro) para as últimas rodadas. O campeonato chega vivo no final e o público aparece.</div>
+
+        <aside class="cta">
+          <img src="../../assets/tabela-de-futebol.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Tabela de Futebol</strong>
+            <p>Cadastre os times, o app monta os jogos e a classificação sai sozinha a cada placar. Mata-mata, grupos, artilharia e PDF para o grupo.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dcomo-montar-tabela-de-jogos-do-campeonato" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+
+        <h2>Depois da tabela, vem a parte chata</h2>
+        <p>Gerar os jogos é o começo. Durante o campeonato você vai precisar lançar os placares, atualizar a classificação, contar saldo de gols, resolver empate e mandar tudo no grupo do WhatsApp toda semana. É aí que o caderno costuma errar e a discussão começa.</p>
+        <p>Antes do primeiro jogo, deixe escrito no regulamento a ordem dos <a href="../criterios-de-desempate-no-futebol/">critérios de desempate</a>. Isso evita metade das brigas.</p>
+        <aside class="cta">
+          <img src="../../assets/tabela-de-futebol.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Tabela de Futebol</strong>
+            <p>Cadastre os times, o app monta os jogos e a classificação sai sozinha a cada placar. Mata-mata, grupos, artilharia e PDF para o grupo.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.tabeladefutebol&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dcomo-montar-tabela-de-jogos-do-campeonato" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+        <section class="faq">
+          <h2>Perguntas frequentes</h2>
+          <details><summary>Como montar uma tabela de jogos com número ímpar de times?</summary><p>Acrescente um time fictício chamado Folga e monte a tabela normalmente. Quem enfrentar a Folga não joga naquela rodada. Com 5 times, por exemplo, cada time folga uma vez em 5 rodadas.</p></details>
+          <details><summary>Como fazer o sorteio da tabela?</summary><p>Sorteie a ordem dos times antes de aplicar o rodízio. A posição sorteada define quem joga contra quem em cada rodada, e o método garante que ninguém repete adversário.</p></details>
+          <details><summary>Como montar o returno?</summary><p>Repita as rodadas do turno na mesma ordem, invertendo o mando: quem foi mandante no turno vira visitante no returno.</p></details>
+          <details><summary>Posso imprimir a tabela gerada?</summary><p>Sim. Gere a tabela e use o botão Imprimir. A página esconde o resto do site na impressão e deixa só as rodadas.</p></details>
+        </section>
+        <section class="related">
+          <h2>Leia também</h2>
+          <ul>
+            <li><a href="../quantos-jogos-tem-um-campeonato/">Quantos jogos tem um campeonato? Calcule em segundos</a></li>
+            <li><a href="../criterios-de-desempate-no-futebol/">Critérios de desempate no futebol: a ordem certa e como usar no seu campeonato</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer class="footer">
+      <a href="../../blog/">Blog</a>
+      <a href="../../termos/">Termos e privacidade</a>
+      <a href="mailto:contato@prancheta.cloud">Contato</a>
+      <span>© 2026 Prancheta Apps. Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>

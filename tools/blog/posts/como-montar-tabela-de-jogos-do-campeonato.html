@@ -1,0 +1,117 @@
+<!--
+{
+  "title": "Como montar a tabela de jogos do campeonato (gerador grátis)",
+  "h1": "Como montar a tabela de jogos de um campeonato, rodada por rodada",
+  "description": "Gere a tabela de jogos do seu campeonato grátis: digite os times e veja todas as rodadas. Entenda o método do rodízio, a folga e o mando de campo.",
+  "lead": "Montar a tabela no caderno parece fácil até o terceiro time jogar duas vezes na mesma rodada. Existe um método simples que nunca erra, e um gerador aqui embaixo que faz tudo sozinho.",
+  "tag": "Campeonato",
+  "app": "tabela",
+  "date": "2026-11-27",
+  "order": 2,
+  "minutes": 6,
+  "keywords": ["como montar tabela de campeonato", "gerador de tabela de jogos", "tabela de jogos pontos corridos", "rodízio de times", "tabela de campeonato para imprimir"],
+  "related": ["quantos-jogos-tem-um-campeonato", "criterios-de-desempate-no-futebol"],
+  "faq": [
+    {"q": "Como montar uma tabela de jogos com número ímpar de times?", "a": "Acrescente um time fictício chamado Folga e monte a tabela normalmente. Quem enfrentar a Folga não joga naquela rodada. Com 5 times, por exemplo, cada time folga uma vez em 5 rodadas."},
+    {"q": "Como fazer o sorteio da tabela?", "a": "Sorteie a ordem dos times antes de aplicar o rodízio. A posição sorteada define quem joga contra quem em cada rodada, e o método garante que ninguém repete adversário."},
+    {"q": "Como montar o returno?", "a": "Repita as rodadas do turno na mesma ordem, invertendo o mando: quem foi mandante no turno vira visitante no returno."},
+    {"q": "Posso imprimir a tabela gerada?", "a": "Sim. Gere a tabela e use o botão Imprimir. A página esconde o resto do site na impressão e deixa só as rodadas."}
+  ]
+}
+-->
+<section class="tool" id="gerador">
+          <h3>Gerador de tabela de jogos</h3>
+          <form id="gen" onsubmit="return false">
+            <label>Times (um por linha)
+              <textarea id="g-times" spellcheck="false">Atlético Praça
+Sport Rua 7
+Estrela do Norte
+Juventude FC
+Amigos FC
+Unidos da Vila</textarea>
+            </label>
+            <div class="row" style="margin-top:12px">
+              <label class="check"><input id="g-volta" type="checkbox" /> Ida e volta (returno)</label>
+              <label class="check"><input id="g-sorteio" type="checkbox" /> Sortear a ordem</label>
+            </div>
+            <button type="button" id="g-print">Imprimir</button>
+          </form>
+          <div class="result" id="g-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+            let ordem = null;
+            function rodizio(nomes) {
+              const t = nomes.slice();
+              if (t.length % 2) t.push(null);
+              const n = t.length, rodadas = [];
+              for (let r = 0; r < n - 1; r++) {
+                const jogos = [];
+                for (let i = 0; i < n / 2; i++) {
+                  let a = t[i], b = t[n - 1 - i];
+                  if (i === 0 && r % 2) [a, b] = [b, a];
+                  jogos.push([a, b]);
+                }
+                rodadas.push(jogos);
+                t.splice(1, 0, t.pop());
+              }
+              return rodadas;
+            }
+            function gerar() {
+              let nomes = $('g-times').value.split('\n').map((s) => s.trim()).filter(Boolean);
+              nomes = [...new Set(nomes)].slice(0, 40);
+              if (nomes.length < 2) { $('g-out').innerHTML = '<p class="tip">Digite pelo menos 2 times.</p>'; return; }
+              if ($('g-sorteio').checked) {
+                if (!ordem || ordem.length !== nomes.length) ordem = nomes.map((_, i) => i).sort(() => Math.random() - 0.5);
+                nomes = ordem.map((i) => nomes[i]);
+              } else ordem = null;
+              let rodadas = rodizio(nomes);
+              if ($('g-volta').checked) rodadas = rodadas.concat(rodadas.map((js) => js.map(([a, b]) => [b, a])));
+              const total = rodadas.reduce((s, js) => s + js.filter(([a, b]) => a && b).length, 0);
+              $('g-out').innerHTML = `<p><strong>${nomes.length} times, ${rodadas.length} rodadas, ${total} jogos.</strong></p><div class="rounds">${rodadas.map((js, i) => `<div class="round"><b>${i + 1}ª rodada</b><ul>${js.map(([a, b]) => a && b ? `<li>${esc(a)} x ${esc(b)}</li>` : `<li class="bye">Folga: ${esc(a || b)}</li>`).join('')}</ul></div>`).join('')}</div>`;
+            }
+            $('gen').addEventListener('input', gerar);
+            $('g-print').addEventListener('click', () => { document.body.classList.add('print-rounds'); window.print(); });
+            window.addEventListener('afterprint', () => document.body.classList.remove('print-rounds'));
+            gerar();
+          })();
+        </script>
+
+        <h2>O método do rodízio (o mesmo das federações)</h2>
+        <p>O jeito mais usado para montar tabela de pontos corridos se chama <strong>método do polígono</strong>, ou rodízio. Ele garante três coisas que no caderno são difíceis de acertar: todo mundo enfrenta todo mundo, ninguém joga duas vezes na mesma rodada e ninguém repete adversário.</p>
+        <h3>Passo a passo com 6 times</h3>
+        <ol>
+          <li>Numere os times de 1 a 6 e escreva em duas linhas: 1, 2, 3 em cima e 6, 5, 4 embaixo.</li>
+          <li>Os times de cima jogam contra os de baixo: 1 x 6, 2 x 5, 3 x 4. Essa é a 1ª rodada.</li>
+          <li>O time 1 fica parado. Todos os outros giram uma casa no sentido horário.</li>
+          <li>Leia os novos confrontos. Repita até completar 5 rodadas (número de times menos um).</li>
+        </ol>
+        <p>Com os times do exemplo do gerador, o resultado fica assim:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rodada</th><th>Jogos</th></tr></thead>
+            <tbody>
+              <tr><td>1ª</td><td>Atlético Praça x Unidos da Vila · Sport Rua 7 x Amigos FC · Estrela do Norte x Juventude FC</td></tr>
+              <tr><td>2ª</td><td>Amigos FC x Atlético Praça · Unidos da Vila x Juventude FC · Sport Rua 7 x Estrela do Norte</td></tr>
+              <tr><td>3ª</td><td>Atlético Praça x Juventude FC · Amigos FC x Estrela do Norte · Unidos da Vila x Sport Rua 7</td></tr>
+              <tr><td>4ª</td><td>Estrela do Norte x Atlético Praça · Juventude FC x Sport Rua 7 · Amigos FC x Unidos da Vila</td></tr>
+              <tr><td>5ª</td><td>Atlético Praça x Sport Rua 7 · Estrela do Norte x Unidos da Vila · Juventude FC x Amigos FC</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>São 15 jogos, exatamente o que a fórmula de <a href="../quantos-jogos-tem-um-campeonato/">quantos jogos tem um campeonato</a> prevê para 6 times.</p>
+
+        <h2>Número ímpar de times: a folga</h2>
+        <p>Com 5, 7 ou 9 times, acrescente um time imaginário chamado <strong>Folga</strong> e monte a tabela normalmente. Quem "enfrenta" a Folga descansa naquela rodada. Cada time folga exatamente uma vez por turno, e o campeonato ganha uma rodada a mais.</p>
+
+        <h2>Mando de campo e returno</h2>
+        <p>O rodízio já alterna o mando do time fixo, para ele não jogar sempre em casa. Se o campeonato tem returno, repita as rodadas na mesma ordem e troque o mando: quem foi mandante no turno é visitante no returno.</p>
+        <div class="tip">Dica de organizador: deixe os jogos mais esperados (os clássicos do bairro) para as últimas rodadas. O campeonato chega vivo no final e o público aparece.</div>
+
+        {{cta}}
+
+        <h2>Depois da tabela, vem a parte chata</h2>
+        <p>Gerar os jogos é o começo. Durante o campeonato você vai precisar lançar os placares, atualizar a classificação, contar saldo de gols, resolver empate e mandar tudo no grupo do WhatsApp toda semana. É aí que o caderno costuma errar e a discussão começa.</p>
+        <p>Antes do primeiro jogo, deixe escrito no regulamento a ordem dos <a href="../criterios-de-desempate-no-futebol/">critérios de desempate</a>. Isso evita metade das brigas.</p>

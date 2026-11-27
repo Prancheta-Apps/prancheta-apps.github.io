@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#23803a" />
+    <title>Como sortear times equilibrados na pelada (sorteador grátis)</title>
+    <meta name="description" content="Sorteador de times grátis com nível dos jogadores: digite os nomes, dê uma nota e divida em times equilibrados. Veja também os métodos de par ou ímpar, capitães e potes." />
+    <link rel="canonical" href="https://prancheta.cloud/blog/como-sortear-times-equilibrados/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://prancheta.cloud/blog/como-sortear-times-equilibrados/" />
+    <meta property="og:title" content="Como sortear times equilibrados na pelada (sorteador grátis)" />
+    <meta property="og:description" content="Sorteador de times grátis com nível dos jogadores: digite os nomes, dê uma nota e divida em times equilibrados. Veja também os métodos de par ou ímpar, capitães e potes." />
+    <meta property="og:image" content="https://prancheta.cloud/assets/og.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Prancheta Apps" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title="Blog da Prancheta" href="https://prancheta.cloud/blog/feed.xml" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Como sortear times equilibrados na pelada, sem ninguém reclamar","description":"Sorteador de times grátis com nível dos jogadores: digite os nomes, dê uma nota e divida em times equilibrados. Veja também os métodos de par ou ímpar, capitães e potes.","datePublished":"2026-11-27","dateModified":"2026-11-27","inLanguage":"pt-BR","mainEntityOfPage":"https://prancheta.cloud/blog/como-sortear-times-equilibrados/","image":"https://prancheta.cloud/assets/og.jpg","author":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"publisher":{"@type":"Organization","@id":"https://prancheta.cloud/#org","name":"Prancheta Apps","url":"https://prancheta.cloud/","logo":"https://prancheta.cloud/assets/logo.png"},"keywords":"sortear times, sorteador de times pelada, como dividir times equilibrados, tirar time pelada, sorteio de times futebol"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Prancheta Apps","item":"https://prancheta.cloud/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://prancheta.cloud/blog/"},{"@type":"ListItem","position":3,"name":"Como sortear times equilibrados na pelada, sem ninguém reclamar","item":"https://prancheta.cloud/blog/como-sortear-times-equilibrados/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual o jeito mais justo de tirar time na pelada?","acceptedAnswer":{"@type":"Answer","text":"Dar uma nota de nível para cada jogador e distribuir em zigue-zague: o melhor vai para o time A, o segundo para o B, o terceiro para o B, o quarto para o A, e assim por diante. Assim a soma dos times fica parecida."}},{"@type":"Question","name":"Como separar os goleiros no sorteio?","acceptedAnswer":{"@type":"Answer","text":"Sorteie os goleiros à parte, um para cada time, e depois distribua os jogadores de linha. No sorteador desta página, marque o goleiro com (G) depois do nome."}},{"@type":"Question","name":"E se sobrar jogador?","acceptedAnswer":{"@type":"Answer","text":"Quem sobra fica de fora na primeira partida e entra no lugar de quem perder, ou o grupo combina uma rotação por tempo. O sorteador deixa os times com diferença de no máximo um jogador."}}]}]}</script>
+    <link rel="icon" href="../../assets/icone-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icone-192.png" />
+    <link rel="preload" href="../../assets/oswald-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="doc-header">
+      <a class="doc-brand" href="../../"><img src="../../assets/logo.png" alt="" width="40" height="40" />Prancheta <span>Apps</span></a>
+      <nav class="top-nav" aria-label="Principal">
+        <a href="../../">Apps</a>
+        <a href="../../blog/" aria-current="page">Blog</a>
+      </nav>
+    </header>
+    <main>
+      <article class="post">
+        <nav class="crumbs" aria-label="Trilha"><a href="../../">Início</a> › <a href="../">Blog</a> › Pelada</nav>
+        <h1>Como sortear times equilibrados na pelada, sem ninguém reclamar</h1>
+        <p class="lead">Time forte contra time fraco estraga a pelada: um lado se diverte, o outro passa a noite buscando a bola no fundo do gol. Veja os jeitos de montar times equilibrados e use o sorteador abaixo.</p>
+        <p class="meta">Por Prancheta Apps · <time datetime="2026-11-27">27 de novembro de 2026</time> · 5 min de leitura</p>
+        <section class="tool" id="sorteador">
+          <h3>Sorteador de times com nível</h3>
+          <form id="st" onsubmit="return false">
+            <label>Jogadores, um por linha, com nota de 1 a 5 (opcional). Goleiro: escreva (G) depois do nome.
+              <textarea id="s-nomes" spellcheck="false">Carlão 5
+Diego 4
+Fabinho 3
+Gustavo 2
+Henrique 4
+Igor 3
+Juninho 5
+Léo 2
+Marcos (G) 4
+Neto (G) 3</textarea>
+            </label>
+            <div class="row" style="margin-top:12px">
+              <label>Número de times<input id="s-times" type="number" min="2" max="8" value="2" inputmode="numeric" /></label>
+            </div>
+            <button type="button" id="s-go">Sortear de novo</button>
+          </form>
+          <div class="result" id="s-out" aria-live="polite"></div>
+        </section>
+        <script>
+          (() => {
+            const $ = (id) => document.getElementById(id);
+            const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+            const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+            function sortear() {
+              const n = Math.min(8, Math.max(2, parseInt($('s-times').value, 10) || 2));
+              const lista = $('s-nomes').value.split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
+                const gk = /\(g\)/i.test(l);
+                const m = l.replace(/\(g\)/i, '').trim().match(/^(.*?)(?:\s+([1-5]))?$/);
+                return { nome: m[1].trim(), nota: m[2] ? Number(m[2]) : 3, gk };
+              });
+              if (lista.length < n) { $('s-out').innerHTML = '<p class="tip">Faltam jogadores para esse número de times.</p>'; return; }
+              const times = Array.from({ length: n }, () => ({ js: [], soma: 0 }));
+              const distribuir = (grupo) => {
+                shuffle(grupo).sort((a, b) => b.nota - a.nota);
+                grupo.forEach((j) => {
+                  const alvo = times.slice().sort((a, b) => a.js.length - b.js.length || a.soma - b.soma)[0];
+                  alvo.js.push(j); alvo.soma += j.nota;
+                });
+              };
+              distribuir(lista.filter((j) => j.gk));
+              distribuir(lista.filter((j) => !j.gk));
+              $('s-out').innerHTML = `<div class="rounds">${times.map((t, i) => `<div class="round"><b>Time ${String.fromCharCode(65 + i)} · força ${t.soma}</b><ul>${t.js.map((j) => `<li>${esc(j.nome)}${j.gk ? ' 🧤' : ''} <span class="bye">(${j.nota})</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+            }
+            $('st').addEventListener('input', sortear);
+            $('s-go').addEventListener('click', sortear);
+            sortear();
+          })();
+        </script>
+        <p>O sorteador separa os goleiros primeiro e depois põe cada jogador no time com menos gente e menor soma de notas. Jogadores com a mesma nota são embaralhados, então cada clique em "Sortear de novo" dá uma combinação diferente, sempre equilibrada.</p>
+
+        <h2>Os 4 jeitos clássicos de tirar time</h2>
+        <h3>1. Par ou ímpar com capitães</h3>
+        <p>Dois capitães escolhem alternadamente. É rápido e todo mundo conhece, mas o último a ser escolhido sempre fica chateado, e os capitães tendem a puxar os amigos.</p>
+        <h3>2. Sorteio puro</h3>
+        <p>Nomes no papel ou no app de sorteio. Ninguém pode reclamar de favorecimento, mas dá muito time desequilibrado: basta os três melhores caírem juntos.</p>
+        <h3>3. Potes</h3>
+        <p>Divida os jogadores em potes por nível (os melhores, os médios, os iniciantes) e sorteie um de cada pote para cada time, como no sorteio da Copa. Equilibra bem sem precisar de nota exata.</p>
+        <h3>4. Notas e zigue-zague</h3>
+        <p>Cada jogador tem uma nota de 1 a 5. Os times recebem jogadores em zigue-zague (A, B, B, A, A, B…) do melhor para o pior. O sorteador acima usa uma variação desse método, que também equilibra o número de jogadores. É o jeito mais justo de todos.</p>
+
+        <div class="tip">Quem dá as notas? O ideal é o grupo combinar e revisar de tempos em tempos. Nota secreta, só com o organizador, evita climão.</div>
+
+        <h2>Dicas para a pelada não desandar</h2>
+        <ul>
+          <li><strong>Goleiro separado.</strong> Um goleiro de verdade para cada lado vale mais que qualquer equilíbrio na linha.</li>
+          <li><strong>Troque depois de 2 goleadas.</strong> Se o mesmo time ganha fácil duas vezes, resorteie.</li>
+          <li><strong>Colete por time.</strong> Evita o "achei que você era do meu time".</li>
+        </ul>
+
+        <aside class="cta">
+          <img src="../../assets/caixa-da-pelada.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Caixa da Pelada</strong>
+            <p>Marque quem pagou, veja quem está devendo e mande a cobrança pronta no grupo. Semanal, quinzenal ou mensal, fixo ou avulso.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.financafacil&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dcomo-sortear-times-equilibrados" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+
+        <p>Time sorteado, falta o resto: lista de quem vem, quadra paga e caixa em dia. Veja <a href="../como-organizar-pelada-fixa/">como organizar uma pelada fixa</a> e <a href="../mensalidade-da-pelada/">quanto cobrar de mensalidade</a>.</p>
+        <aside class="cta">
+          <img src="../../assets/caixa-da-pelada.png" alt="" width="72" height="72" loading="lazy" />
+          <div>
+            <strong>Caixa da Pelada</strong>
+            <p>Marque quem pagou, veja quem está devendo e mande a cobrança pronta no grupo. Semanal, quinzenal ou mensal, fixo ou avulso.</p>
+          </div>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.prancheta.financafacil&amp;hl=pt-BR&amp;referrer=utm_source%3Dblog%26utm_medium%3Dpost%26utm_campaign%3Dcomo-sortear-times-equilibrados" target="_blank" rel="noopener">Baixar grátis</a>
+        </aside>
+        <section class="faq">
+          <h2>Perguntas frequentes</h2>
+          <details><summary>Qual o jeito mais justo de tirar time na pelada?</summary><p>Dar uma nota de nível para cada jogador e distribuir em zigue-zague: o melhor vai para o time A, o segundo para o B, o terceiro para o B, o quarto para o A, e assim por diante. Assim a soma dos times fica parecida.</p></details>
+          <details><summary>Como separar os goleiros no sorteio?</summary><p>Sorteie os goleiros à parte, um para cada time, e depois distribua os jogadores de linha. No sorteador desta página, marque o goleiro com (G) depois do nome.</p></details>
+          <details><summary>E se sobrar jogador?</summary><p>Quem sobra fica de fora na primeira partida e entra no lugar de quem perder, ou o grupo combina uma rotação por tempo. O sorteador deixa os times com diferença de no máximo um jogador.</p></details>
+        </section>
+        <section class="related">
+          <h2>Leia também</h2>
+          <ul>
+            <li><a href="../mensalidade-da-pelada/">Mensalidade da pelada: quanto cobrar e como organizar o caixa sem dor de cabeça</a></li>
+            <li><a href="../como-organizar-pelada-fixa/">Como organizar uma pelada fixa que dura anos: o passo a passo</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer class="footer">
+      <a href="../../blog/">Blog</a>
+      <a href="../../termos/">Termos e privacidade</a>
+      <a href="mailto:contato@prancheta.cloud">Contato</a>
+      <span>© 2026 Prancheta Apps. Todos os direitos reservados.</span>
+    </footer>
+  </body>
+</html>

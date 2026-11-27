@@ -15,3 +15,12 @@
 - [Termos de uso e privacidade](https://prancheta.cloud/termos/)
 - [English](https://prancheta.cloud/en/) · [Español](https://prancheta.cloud/es/) · [Français](https://prancheta.cloud/fr/) · [Italiano](https://prancheta.cloud/it/) · [Deutsch](https://prancheta.cloud/de/)
 - Contato: contato@prancheta.cloud
+
+## Blog
+
+- [Blog da Prancheta](https://prancheta.cloud/blog/): guias para quem organiza campeonato, pelada e time amador.
+- [Quantos jogos tem um campeonato?](https://prancheta.cloud/blog/quantos-jogos-tem-um-campeonato/): calculadora e tabela de 3 a 20 times.
+- [Como montar a tabela de jogos](https://prancheta.cloud/blog/como-montar-tabela-de-jogos-do-campeonato/): gerador de rodadas pelo método do rodízio.
+- [Critérios de desempate no futebol](https://prancheta.cloud/blog/criterios-de-desempate-no-futebol/): Brasileirão, Copa 2026 e modelo de regulamento.
+- [Mensalidade da pelada](https://prancheta.cloud/blog/mensalidade-da-pelada/): calculadora e como cobrar.
+- [Esquemas táticos do futsal](https://prancheta.cloud/blog/esquemas-taticos-do-futsal/): 3-1, 2-2, 4-0 e goleiro-linha.
